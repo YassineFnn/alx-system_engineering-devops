@@ -1,0 +1,11 @@
+#!/bin/bash
+
+read -p "Enter input: " input
+
+# Use parameter expansion to replace A with Z
+input="${input//A/Z}"
+
+# Use parameter expansion to replace c with e
+input="${input//c/e}"
+
+echo "Output: $input"
