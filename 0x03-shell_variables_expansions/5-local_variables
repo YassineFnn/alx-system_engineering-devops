@@ -1,4 +1,2 @@
 #!/bin/bash
-set | grep -vE '^(BASH|EUID|PPID|UID|_)'
-env
-declare -F | awk '{print $3}'
+echo "Local variables:" && set | grep -vE '^(BASH|EUID|PPID|UID|_)'; echo "Environment variables:" && env; echo "Functions:" && declare -F | awk '{print $3}'
