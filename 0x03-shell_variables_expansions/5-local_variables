@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Local variables:" && set | grep -vE '^(BASH|EUID|PPID|UID|_)'; echo "Environment variables:" && env; echo "Functions:" && declare -F | awk '{print $3}'
+set | egrep '^[[:alnum:]_]+=.*' | awk -F= '{print $1}' | sort ; declare -F | awk '{print $3}'
