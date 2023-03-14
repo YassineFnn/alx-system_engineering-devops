@@ -1,0 +1,4 @@
+#!/bin/bash
+set | grep -vE '^(BASH|EUID|PPID|UID|_)'
+env
+declare -F | awk '{print $3}'
